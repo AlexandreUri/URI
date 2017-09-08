@@ -1,0 +1,13 @@
+import java.util.*; 
+public class Main{ 
+	 
+	public static void main(String args[]){
+			Scanner leitura=new Scanner(System.in);
+			int x=leitura.nextInt();
+			 
+			 for(int i=0;i<10;i++){
+			 	System.out.printf("N[%d] = %d\n",i,x);
+			 	x*=2;
+			 }
+	}
+}
