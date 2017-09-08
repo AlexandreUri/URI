@@ -1,0 +1,20 @@
+import java.util.*; 
+public class Main{ 
+	public static long[] vetor=new long[65];
+	 
+	public static void main(String args[]){
+			Scanner leitura=new Scanner(System.in);
+			int n=leitura.nextInt(),x;
+			int vet[]=new int[2500];
+			 while(n!=0){
+			 	  n--;
+			 	  x=leitura.nextInt();
+			 	  vet[x]++;
+			 }
+			 for(int i=0;i<2500;i++){
+			 	if(vet[i]!=0){
+			 		System.out.printf("%d aparece %d vez(es)\n",i,vet[i]);
+			 	}
+			 }
+	}
+}
