@@ -1,0 +1,24 @@
+import java.util.*; 
+public class Main{ 
+	public static long[] vetor=new long[65];
+	 
+	public static void main(String args[]){
+			Scanner leitura=new Scanner(System.in);
+			 while(leitura.hasNext()){
+			 	 int n=leitura.nextInt(),m=leitura.nextInt();
+			 	 if(n==0&&m==0)break;
+			 	 int qt[]=new int[n+1];
+			 	 int pes[]=new int[m];
+			 	 int cont=0;
+			 	 for(int i=0;i<m;i++){
+			 	 	pes[i]=leitura.nextInt();
+			 	 	 
+			 	 	qt[pes[i]]+=1;
+			 	 }
+			 	 for(int i=0;i<n+1;i++){
+			 	 	if(qt[i]>1)cont++;
+			 	 }
+			 	 System.out.println(cont);
+			 }
+	}
+}
