@@ -1,0 +1,16 @@
+import java.util.*; 
+public class Main{ 
+	 
+	public static void main(String args[]){
+			Scanner leitura=new Scanner(System.in);
+			int x=leitura.nextInt(),dinheiro=leitura.nextInt(),dia;
+			int menor=99999999;
+			for(int i=0;i<x;i++){
+				dia=leitura.nextInt();
+				dinheiro+=dia;
+				if(dinheiro<menor)menor=dinheiro;
+			}
+			System.out.println(menor);
+
+	}
+}
