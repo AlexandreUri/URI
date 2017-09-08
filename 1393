@@ -1,0 +1,31 @@
+import java.util.*; 
+public class Main{ 
+	public static long[] vetor=new long[65];
+	public static long fibo(int x){
+			if(x==0) {
+					vetor[x]=0;
+					return vetor[x];
+			}
+			if(x==1){					
+					vetor[x]=1;
+					return vetor[x];
+			}
+			
+			if(vetor[x]!=-1)return vetor[x];
+			vetor[x] =fibo(x-1)+fibo(x-2);
+			return vetor[x];
+		
+	}
+	public static void main(String args[]){
+			Scanner leitura=new Scanner(System.in);
+			for(int i=0;i<45;i++){
+				vetor[i]=-1;
+			}
+			while(leitura.hasNext()){
+				int n=leitura.nextInt();
+				if(n==0)break;
+				 System.out.println(fibo(++n));
+
+			}
+	}
+}
