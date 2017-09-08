@@ -1,0 +1,41 @@
+import java.util.*; 
+public class Main{ 
+	 
+	public static void main(String args[]){
+			Scanner leitura=new Scanner(System.in);
+			 int impar[]=new int[15];
+			 int par[]=new int[15];
+			 int x,im=0,pa=0,qi=0,qp=0;
+			 for(int i=0;i<15;i++){
+			 	x=leitura.nextInt();
+			 	if(x%2==0){
+			 		par[pa]=x;
+			 		pa++;
+			 	}
+			 	else{
+			 		impar[im]=x;
+			 		im++;
+			 	}
+			 	if(pa==5){
+			 		for(int j=0;j<5;j++){
+			 			System.out.printf("par[%d] = %d\n",j,par[j]);
+			 		}
+			 		pa=0;
+			 		qp+=5;
+			 	}
+			 	else if(im==5){
+			 		for(int j=0;j<5;j++){
+			 			System.out.printf("impar[%d] = %d\n",j,impar[j]);
+			 		}
+			 		im=0;
+			 		qi+=5;
+			 	}
+			 }
+			 for(int i=0;i<im;i++){
+			 	System.out.printf("impar[%d] = %d\n",i,impar[i]);
+			 }
+			 for(int i=0;i<pa;i++){
+			 	System.out.printf("par[%d] = %d\n",i,par[i]);
+			 }		
+	}
+}
