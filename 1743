@@ -1,0 +1,28 @@
+import java.util.*; 
+public class Main{ 
+	public static long[] vetor=new long[65];
+	 
+	public static void main(String args[]){
+			Scanner leitura=new Scanner(System.in);
+			 int vet1[]=new int[5];
+			 int vet2[]=new int[5];
+			 boolean deucerto=true;
+			 for(int i=0;i<5;i++){
+			 	vet1[i]=leitura.nextInt();
+			 }
+
+			 for(int i=0;i<5;i++){
+			 	vet2[i]=leitura.nextInt();
+			 }
+
+			 for(int i=0;i<5;i++){
+			 	if(vet1[i]==vet2[i])deucerto=false;
+			 }
+			 if(deucerto){
+			 	System.out.println("Y");
+			 }
+			 else{
+			 	System.out.println("N");
+			 }
+			}
+}
