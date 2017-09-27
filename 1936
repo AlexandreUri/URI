@@ -1,0 +1,42 @@
+import java.util.*;
+ 
+public class Main{ 
+	public static int[] vet=new int[9];
+	 public static int fat(int x){
+	 	if(x==0){
+			vet[x]=1;
+			return 1;
+		}
+		else{
+			vet[x]=x*fat(x-1);
+		}
+		//System.out.println(vet[x]);
+		return vet[x];
+	 }
+	 
+	public static void main(String caralho[]){
+			Scanner sc=new Scanner(System.in);
+			fat(8);
+			int cont=0;
+			int numero=sc.nextInt();
+			for(int i=8;i>=1;){
+				if(numero>=vet[i]){
+					numero-=vet[i];
+					cont++;
+				}
+				else{
+					i--;
+				}
+				
+			}
+			System.out.println(cont);
+			 
+	}
+}
+
+
+/*
+				Set <Integer> myset = new HashSet<>();
+				myset.add();
+				myset.size();
+*/
