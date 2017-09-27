@@ -1,0 +1,34 @@
+import java.util.Scanner;
+import java.lang.String;
+  
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in); 
+		while(sc.hasNextLine()){
+			String fr = sc.nextLine();
+			int r = -1 , aux = 0, c = 0;
+			for(int i = 0;i < fr.length();i++){
+				if(fr.charAt(i) == 'x')
+					aux++;
+				if(fr.charAt(i) == 'x' && aux >= 2){
+					c /= 2;
+					if(c >= r)
+						r = c;
+					c = 0;
+				}
+				else if(fr.charAt(i) == 'x' && aux < 2){
+					if(c >= r)
+						r = c;
+					c = 0;
+				}
+				else
+					c++;
+			}
+			if(c > r)
+				r = c;
+			System.out.printf("%d\n",r);
+		}
+    }
+}
