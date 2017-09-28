@@ -1,0 +1,27 @@
+import java.util.*;
+ 
+public class Main{	
+	public static void main (String[] args){
+		 
+		Scanner sc=new Scanner(System.in);
+		int n = sc.nextInt(),k = sc.nextInt();
+		int vet[] = new int[100100],b[] = new int[100100];
+		for(int i=0;i<n;i++) 
+		    vet[i] = sc.nextInt();
+		for(int i=1;i<n;i++){
+			if(vet[i-1]<vet[i]) 
+			    b[i] = 1;
+			else b[i] = -1;
+		}
+		int l=0,x=0;
+		for(int i=1;i<n;i++){
+			if(b[i]!=l){
+				x++;
+				l = b[i];
+			}
+		}
+		int teste = k+k;
+		if(teste == x) System.out.println("beautiful");
+		else System.out.println("ugly");
+	}
+}
