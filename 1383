@@ -1,0 +1,108 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Main
+{
+	public static int matriz[][]=new int[9][9];;
+	public static int vet[]=new int[9];
+
+	public static int func(int x,int pos){
+			int bia=0;// bia te amo
+			Set<Integer> myset=new HashSet<>();
+			for(int j=x;j<x+3;j++){
+				for(int i=0;i<3;i++){
+					
+					myset.add( matriz[j][i+pos]);
+				 
+				 
+				}
+				
+			} 
+			 int tam=myset.size();
+			  
+			if(tam==9){ 
+				 if(x==6&&pos==6){
+				 	 
+				 	return 1;
+				 	 
+				 	}
+				 
+				 
+				if(pos==6)
+				 if (func(x+3,0)==1){
+				 	return 1;
+				 }
+				 else{
+				 	return 0;
+				 }
+				 else if( func(x,pos+3)==1){
+				 	return 1;
+				 }
+				 else{
+				 	return 0;
+				 }
+				 
+			}
+			else{ 
+				return 0;
+				}
+}
+
+
+
+	
+	
+	public static int linha(){
+		Set<Integer> myset=new HashSet<>();
+		for(int i=0;i<9;i++){
+			for(int j=0;j<9;j++){
+				myset.add(matriz[i][j]);
+			}	
+			if(myset.size()!=9)return 0;
+			myset.clear();
+		}
+		return 1;
+	
+	}
+	public static int coluna(){
+		Set<Integer> myset=new HashSet<>();
+		for(int i=0;i<9;i++){
+			for(int j=0;j<9;j++){
+				myset.add(matriz[j][i]);
+			}	
+			if(myset.size()!=9)return 0;
+			myset.clear();
+		}
+		return 1;
+	
+	}
+	
+	
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		 int n=sc.nextInt();
+		 int cont=0;
+		 while(n!=0){
+		 	n--;
+		  
+		 	for(int i=0;i<9;i++){
+		 		for(int j=0;j<9;j++){
+		 			matriz[i][j]=sc.nextInt();
+		 		}	
+		 	}
+		 	++cont;
+		 	System.out.println("Instancia "+cont);
+		 	if(func(0,0)==1&&linha()==1&&coluna()==1){
+		 		System.out.println("SIM\n");
+		 	}
+		 	else{
+		 		System.out.println("NAO\n");
+		 	}
+		 }
+	}
+}
