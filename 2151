@@ -1,0 +1,37 @@
+ import java.util.Scanner;
+ public class Main{
+ 	public static int func_maior_dist(int x,int y,int xn,int yn){
+ 		int eixoX=Math.abs(x-xn),eixoY=Math.abs(y-yn);
+ 		 int ret=10-(eixoX>eixoY ? eixoX:eixoY);
+ 		 return ret;
+ 	}
+ 	public static void main(String[] args) {
+ 		Scanner sc=new Scanner(System.in);
+ 		int n=sc.nextInt(),cont=0;
+ 		while(n>0){
+ 			n--;
+ 			cont++;
+ 			int c=sc.nextInt(),l=sc.nextInt(),cn=sc.nextInt(),ln=sc.nextInt();
+ 			int matriz[][]= new int [c][l];
+ 			for(int i=0;i<c;i++){
+ 				for(int j=0;j<l;j++){
+ 					matriz[i][j]=sc.nextInt();
+ 					int res=func_maior_dist(i+1,j+1,cn,ln);
+ 					if(res<1)matriz[i][j]+=1;
+ 					else matriz[i][j]+=res;
+ 				}
+ 			}
+ 			System.out.println("Parede "+cont+":");
+ 			for(int i=0;i<c;i++){
+ 				for(int j=0;j<l;j++){
+ 					if(j==0)
+ 						System.out.printf("%d",matriz[i][j]);
+ 					else
+ 						System.out.printf(" %d",matriz[i][j]);
+ 				}
+ 				System.out.println();
+
+ 			}
+ 		}	
+ 	}
+ }
