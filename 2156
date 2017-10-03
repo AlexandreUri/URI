@@ -1,0 +1,79 @@
+import java.util.*;
+import java.io.*;
+public class Main {
+   public static void main(String[] args) {
+            Scanner sc=new Scanner(System.in);
+            Scanner leia=new Scanner(System.in);
+            while(sc.hasNext()){
+              int l=sc.nextInt(),c=sc.nextInt();
+              int instrucao=sc.nextInt();
+              if(l==0&&c==0&&instrucao==0)break;
+
+              String cena[]=new String[l+1];
+              int posx=0,posy=0,encontrou=1;
+              // sc.reset(); 
+              for(int i=0;i<l+1;i++){
+
+                cena[i]=sc.nextLine();
+
+              //	System.out.println("opa"+cena[i]);
+                if(encontrou==1){
+                  int ec=cena[i].indexOf("<");
+                  if(ec!=-1){
+                    posx=i;
+                    posy=ec;
+                    encontrou=0;
+                  }
+                }
+              }
+
+
+              String movimentos=sc.next();
+              int posf=0;
+              int quantidade=0;
+              for(int i=0;i<instrucao;i++){
+
+                char guard=movimentos.charAt(i);
+                if(guard!='W'){
+                  if(guard=='R')posf=0;
+                  else if(guard=='U')posf=1;
+                  else if(guard=='L')posf=2;
+                  else if(guard=='D')posf=3;
+                }
+                else{
+                  int eixox=posx,eixoy=posy;
+                  if(posf==0){
+                    eixoy+=1;
+                  }
+                  else if(posf==1){
+                    eixox-=1;
+                  }
+                  else if(posf==2){
+                    eixoy-=1;
+                  }
+                  else {
+                    eixox+=1;
+                  }
+                  String posicao=new StringBuffer(cena[eixox].substring(eixoy,eixoy+1)).toString();
+
+                  if(posicao.equals("*")){
+                    quantidade++;
+                    cena[posx]=new StringBuffer(cena[posx].substring(0,eixoy)+" "+cena[posx].substring(eixoy+1,cena[posx].length())).toString();
+                    posx=eixox;
+                    posy=eixoy;
+                    cena[posx]=new StringBuffer(cena[posx].substring(0,eixoy)+"<"+cena[posx].substring(eixoy+1,cena[posx].length())).toString();
+                  }
+                  else if(posicao.equals(" ")){
+
+                    cena[posx]=new StringBuffer(cena[posx].substring(0,eixoy)+" "+cena[posx].substring(eixoy+1,cena[posx].length())).toString();
+                    posx=eixox;
+                    posy=eixoy;
+                    cena[posx]=new StringBuffer(cena[posx].substring(0,eixoy)+"<"+cena[posx].substring(eixoy+1,cena[posx].length())).toString();
+                  }
+                }
+              }
+              System.out.println(quantidade);
+
+            }
+    }
+}
