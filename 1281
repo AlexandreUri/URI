@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+map<string,double> mapa;
+int main(void){
+    int n;
+    cin>>n;
+    while(n--){
+        int nq;
+        cin>>nq;
+        string nome;
+        double guard=0;
+        for(int i=0;i<nq;i++){
+
+            cin>>nome;
+            double valor;
+            cin>>valor;
+            mapa[nome]=valor;
+        }
+        cin>>nq;
+        for(int i=0;i<nq;i++){
+            cin>>nome;
+            int qtd;
+            cin>>qtd;
+            guard+=mapa[nome]*qtd;
+        }
+        printf("R$ %.2lf\n",guard);
+    }
+
+}
