@@ -1,0 +1,34 @@
+import java.util.*;
+ 
+
+public class Main{
+	  
+	
+	public static void main(String arg[]){
+		  Scanner sc=new Scanner(System.in);
+		 
+		 String bia=sc.next();
+		  	double mat[][]=new double [12][12];
+		  	double cont=0;
+		  	int parar=0;
+		 	for(int i=0;i<12;i++){
+		 		for(int j=0;j<12;j++){
+		 			mat[i][j]=sc.nextDouble();
+		 			if(i<11-j){
+		 				cont+=mat[i][j];
+		 				parar+=1;
+		 			}
+		 		}
+		 	}
+		 	
+		 	 
+		 	if(!bia.equals("S"))cont/=parar;
+		 	System.out.printf("%.1f\n",cont);
+
+		  
+	}
+
+}    
+
+// N=0, L=1, S=2, O=3
+// 

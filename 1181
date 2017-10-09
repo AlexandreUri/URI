@@ -1,0 +1,27 @@
+import java.util.*;
+ 
+
+public class Main{
+	  
+	
+	public static void main(String arg[]){
+		  Scanner sc=new Scanner(System.in);
+		 int n=sc.nextInt();
+		 String bia=sc.next();
+		  	double mat[][]=new double [12][12];
+		 	for(int i=0;i<12;i++){
+		 		for(int j=0;j<12;j++){
+		 			mat[i][j]=sc.nextDouble();
+		 		}
+		 	}
+		 	double cont=0;
+		 	for(int i=0;i<12;i++){
+		 		cont+=mat[n][i];
+		 	}
+		 	if(!bia.equals("S"))cont/=12.0;
+		 	System.out.printf("%.1f\n",cont);
+
+		  
+	}
+
+}    
