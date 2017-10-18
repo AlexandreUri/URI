@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class Main{
+	public static void main(String aegs[]){
+		Scanner sc=new Scanner(System.in);
+		String nums="`1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./";
+		nums=nums.toUpperCase();
+		while(sc.hasNext()){
+			String fr=sc.nextLine();
+			StringBuffer nova=new StringBuffer();
+			for(int i=0;i<fr.length();i++){
+				if(fr.charAt(i)==nums.charAt(0)||fr.charAt(i)=='Q'||fr.charAt(i)=='A'||fr.charAt(i)=='Z'){
+					System.exit(0);
+				}
+			}
+				for(int j=0;j<fr.length();j++){
+					if(fr.charAt(j)!=' '){
+					int x=nums.indexOf(fr.charAt(j)+"")-1;
+					nova.append(nums.charAt(x)+"");
+					}
+					else nova.append(" ");
+					
+				}
+			
+			
+			System.out.println(nova.toString());
+		}
+		 
+		 
+		
+	}
+}
