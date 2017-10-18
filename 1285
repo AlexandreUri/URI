@@ -1,0 +1,28 @@
+ 
+import java.util.*; 
+class Main
+{
+	public static boolean quebra(String x){
+		Set<String> myset=new HashSet<>();
+		for(int i=0;i<x.length();i++){
+			myset.add(new StringBuffer(""+x.charAt(i)).toString());
+		}
+		if(myset.size()==x.length())return true;
+		return false;
+	}
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		while(sc.hasNext()){
+		 int x=sc.nextInt(),y=sc.nextInt();
+		 int cont=0;
+		 for(int i=x;i<=y;i++){
+			if(quebra(Integer.toString(i))){
+			
+				cont++;
+			}
+		 }
+		System.out.println(cont);	
+		}
+	}
+}
