@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+void converte(char i){
+        if(i>='a'&&i<='c'||i>='A'&&i<='C')printf("2");
+        else if(i>='d'&&i<='f'||i>='D'&&i<='F') printf("3");
+        else if(i>='g'&&i<='i'||i>='G'&&i<='I') printf("4");
+        else if(i>='j'&&i<='l'||i>='J'&&i<='L') printf("5");
+        else if(i>='m'&&i<='o'||i>='M'&&i<='O') printf("6");
+        else if(i>='p'&&i<='s'||i>='P'&&i<='S') printf("7");
+        else if(i>='t'&&i<='v'||i>='T'&&i<='V') printf("8");
+        else if(i>='w'&&i<='z'||i>='W'&&i<='Z') printf("9");
+        else if(i=='*'||i=='1'||i=='#'||i=='0'||i>='0'&&i<='9')printf("%c",i);
+
+    }
+int main(void){
+    char num[600];
+
+    while(scanf(" %[^\n]",num)!=EOF){
+        int ifi=0;
+        for(int i=0;i<strlen(num);i++){
+            if(num[i]=='-')ifi=1;
+            else{
+                converte(num[i]);
+            }
+
+        }
+        printf("\n");
+    }
+}
