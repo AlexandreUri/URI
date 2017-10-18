@@ -1,0 +1,30 @@
+ /* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		while(sc.hasNext()){
+			int q=sc.nextInt();
+			if(q==0)break;
+			int x=sc.nextInt(),y=sc.nextInt();
+			String p="";
+			for(int i=0;i<q;i++){
+				int nx=sc.nextInt(),ny=sc.nextInt();
+				if(nx==x||ny==y)p="divisa";
+				else if(nx<x&&ny>y)p="NO";
+				else if(nx<x&&ny<y)p="SO";
+				else if(nx>x&&ny>y)p="NE";
+				else p="SE";
+				System.out.println(p);
+			}
+			
+		}
+	}
+}
