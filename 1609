@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n;
+	scanf("%d",&n);
+	while(n--){
+		int q,num;
+		set<int>myset;
+		scanf("%d",&q);
+		for(int i=0;i<q;i++){
+			scanf("%d",&num);
+			myset.insert(num);
+		}
+		printf("%d\n",myset.size());
+	}
+	return 0;
+}
