@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	 int n,num;
+	 vector<int> myvet;
+	 cin>>n;
+	 for(int i=0;i<n;i++){
+	 	cin>>num;
+	 	myvet.push_back(num);
+	 }
+	 sort(myvet.begin(),myvet.end());
+	 int soma=0,ans=0;
+	 for(int i=0;i<n;i++){
+	 	if(myvet[i]<soma){
+	 		ans=i+1;
+	 	}
+	 	soma+=myvet[i];
+	 }
+	 cout<<ans<<'\n';
+	return 0;
+}
