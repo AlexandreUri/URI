@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class Main{
+	public static void main(String aegs[]){
+		Scanner sc=new Scanner(System.in);
+		String nums=sc.nextLine();
+		nums=nums.toLowerCase();
+		if(nums.indexOf("zelda")==-1){
+			System.out.println("Link Tranquilo");
+		}
+		else{
+			System.out.println("Link Bolado");
+		}
+		
+	}
+}
