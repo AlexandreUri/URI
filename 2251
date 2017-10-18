@@ -1,0 +1,18 @@
+import java.util.Scanner;  
+class Main
+{	
+	public static long anoi(int x){
+		if(x==1)return 1;
+		return (long)(Math.pow(2,x)-1);
+	}
+	public static void main (String[] args)  {		 
+		 Scanner sc=new Scanner(System.in);
+		 int cont=0;
+		 while(true){
+			int n=sc.nextInt();
+			if(n==0)break;
+			cont++;
+			System.out.println("Teste "+(cont)+"\n"+anoi(n)+"\n");
+		 }
+	}
+}
