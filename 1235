@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class Main{
+	public static void main(String aegs[]){
+		Scanner sc=new Scanner(System.in);
+		String nums=sc.nextLine();
+		int num=Integer.parseInt(nums);
+		while(num-->0){
+			String fr=sc.nextLine();
+			int meio=fr.length()/2;
+			String n=new StringBuffer(fr.substring(0,meio)).reverse().toString();
+			String n2=new StringBuffer(fr.substring(meio,fr.length())).reverse().toString();
+			System.out.println(n+n2);
+		}
+		
+	}
+}
