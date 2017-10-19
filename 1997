@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Main{
+	public static void main(String args[]){
+		Scanner sc=new Scanner(System.in);
+		int soma=0;
+		while(true){
+			
+		 	String S=sc.nextLine();
+		 	String c[]=S.split(" ");
+		 	S=c[0];
+		 	String T=c[1]; 
+		 	if(S.equals("*")&&T.equals("*"))break;
+		 	int ini=0,cont=0,r=1;
+		 	for(int i=0;i<S.length();i++){
+		 		if(S.charAt(i)!=T.charAt(i)){		 		 
+		 			cont=1;		 				 
+		 		}
+		 		else r=0;
+		 		if(r==0||i==S.length()-1){
+		 			if(cont==1)
+		 				ini++;
+		 			cont=0;
+		 			r=1;
+		 		}
+		 	}
+		 	System.out.println(ini);
+
+		}
+	}
+}
