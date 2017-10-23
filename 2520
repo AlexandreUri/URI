@@ -1,0 +1,28 @@
+import java.util.Scanner; 
+class Main{
+	public static void main (String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int c,l;
+		while(sc.hasNext()){
+			c=sc.nextInt();l=sc.nextInt();
+			int kira=0,mito=0;
+			int kira2=0,mito2=0;
+			int matriz[][]=new int[120][120];
+			for(int i=0;i<c;i++){
+				for(int j=0;j<l;j++){
+					matriz[i][j]=sc.nextInt();
+					if(matriz[i][j]==1){
+						kira=i;
+						mito=j;
+					}
+					else if(matriz[i][j]==2){
+						kira2=i;
+						mito2=j;	
+					}
+				}
+					
+			}
+			System.out.println((int)(Math.abs(kira-kira2)+Math.abs(mito-mito2)));
+		}
+	}
+}
