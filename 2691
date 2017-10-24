@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Main{
+	public static void main (String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		for(int i=0;i<n;i++){
+			String x=sc.next();
+			String vet[]=x.split("x");
+			int ini=Integer.parseInt(vet[0]);
+			int fim=Integer.parseInt(vet[1]);
+			int kr=6;
+			int orini=ini,orifim=fim;
+			int cinco=5;
+			while(kr-- >0){
+				if(orini!=orifim)System.out.printf("%d x %d = %d && %d x %d = %d\n",ini,cinco,ini*cinco,fim,cinco,cinco*fim);
+				else System.out.printf("%d x %d = %d\n",ini,cinco,ini*cinco);
+				cinco++;
+			}
+			
+		}
+	}
+}
