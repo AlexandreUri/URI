@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class Main{
+   
+  public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    while(sc.hasNext()){
+		int x=sc.nextInt();
+		 
+		if(x>=0&&x<90||x==360)System.out.println("Bom Dia!!");
+		else if(x>=90&&x<180)System.out.println("Boa Tarde!!");
+		else if(x>=180&&x<270)System.out.println("Boa Noite!!");
+		else if(x>=270&&x<360)System.out.println("De Madrugada!!");
+	}
+    
+  }
+}
