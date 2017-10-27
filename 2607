@@ -1,0 +1,3 @@
+ select DISTINCT (providers.city)
+  from providers
+   order by providers.city;
