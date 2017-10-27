@@ -1,0 +1,3 @@
+
+  select cast(avg(products.price) as decimal(8,2))
+  from products;
