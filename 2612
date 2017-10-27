@@ -1,0 +1,7 @@
+
+select movies.id,movies.name
+from movies
+inner join genres on genres.id=movies.id_genres
+inner join movies_actors on movies_actors.id_movies=movies.id
+inner join actors on actors.id=movies_actors.id_actors
+where genres.description='Action' and(actors.name='Marcelo Silva' or actors.name='Miguel Silva');
