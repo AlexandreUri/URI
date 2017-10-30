@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int a,b;
+int  busca(int vet[],int ini,int fim,int acha){
+    if(ini>fim)return -1;
+    int aut=(ini+fim)/2;
+    if(vet[aut]==acha)return aut;
+    return vet[aut]>acha ? busca(vet,ini,aut-1,acha): busca(vet,aut+1,fim,acha);
+}
+
+int main(void){
+    int cont=0;
+    while(cin>>a>>b){
+        cont++;
+        if(a==0&&b==0)break;
+        int vet[a];
+        for(int i=0;i<a;i++){
+            cin>>vet[i];
+        }
+        int que[b];
+        for(int i=0;i<b;i++){
+            cin>>que[i];
+        }
+        sort(vet,vet+a);
+        printf("CASE# %d:\n",cont);
+        for(int j=0;j<b;j++){
+            int ans=busca(vet,0,a-1,que[j]);
+            if(ans==-1){
+                printf("%d not found\n",que[j]);
+            }
+            else{
+                    while(vet[ans-1]==que[j]){
+                        ans-=1;
+                    }
+                printf("%d found at %d\n",que[j],ans+1);
+            }
+        }
+
+    }
+
+}
