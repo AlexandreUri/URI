@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+bool cmp(int x,int y){
+    if(x%2==0) return x<y;
+    else return x>y;
+}
+int main(void){
+  int n;
+  scanf("%d",&n);
+  int matp[n],l,cpar=0,mati[n],cimp=0;
+
+  //memset(matp,0,sizeof matp);
+ // memset(mati,0,sizeof mati);
+
+
+    for(int i=0;i<n;i++){
+        scanf("%d",&l);
+        if(l%2==0){
+            matp[cpar]=l;
+            cpar++;
+        }
+        else {
+            mati[cimp]=l;
+            cimp++;
+        }
+    }
+    sort(matp,matp+cpar);
+     sort(mati,mati+cimp);
+    for(int j=0;j<cpar;j++){
+       printf("%d\n",matp[j]);
+    }
+    for(int j1=cimp-1;j1>=0;j1--){
+       printf("%d\n",mati[j1]);
+    }
+  }
+
