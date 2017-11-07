@@ -37,6 +37,7 @@ int main(void){
                 printf("%d found at %d\n",que[j],ans+1);
             }
         }
+        //e aí bichao da goiabada!!!!! FIRMES??????
 
     }
 
